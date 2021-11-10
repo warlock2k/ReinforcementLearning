@@ -1,4 +1,4 @@
-e% Achyuth Nandikotkur
+% Achyuth Nandikotkur
 % Multiarm bandit problem
 %
 % a. Greedy algorithm;

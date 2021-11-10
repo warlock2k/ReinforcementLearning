@@ -19,7 +19,7 @@ qvaluelowsearch = [0];
 qvaluelowwait = [0];
 qvaluelowrecharge = [0];
 
-Steps = 5000;
+Steps = 10000;
 
 stepsize = 0.05;
 epsilon = 0.1;
@@ -148,41 +148,6 @@ for outerloop = 1: Steps
 %             sequence{1+1}.action = randsample([1, 2, 3], 1);
 %         end
 %     end
-
-    A = [qvaluehighsearch(end) qvaluehighwait(end)];
-    maxval = max(A);
-    lia = ismember(A,maxval);
-    idx = find(lia);
-
-    probability = 1;
-    pihigh = {0, 0};
-    for i = 1:numel(idx)
-        pihigh{idx(i)} = (probability/numel(idx));
-        if(size(idx) == 1)
-            break;
-        end
-    end
-
-    pisearchhigh = pihigh{1};
-    piwaithigh = pihigh{2};
-    
-    A = [qvaluelowsearch(end) qvaluelowwait(end) qvaluelowrecharge(end)];
-    maxval = max(A);
-    lia = ismember(A,maxval);
-    idx = find(lia);
-
-    probability = 1;
-    pilow = {0, 0, 0};
-    for i = 1:numel(idx)
-        pilow{idx(i)} = (probability/numel(idx));
-        if(size(idx) == 1)
-            break;
-        end
-    end
-
-    pisearchlow = pilow{1};
-    piwaitlow = pilow{2};
-    pirechargelow = pilow{3};
 
 % EXPECTED SARSA - CHOOSING NEXT ACTION WITH AN EXPECTATION
     if(sequence{1}.state == 1)         

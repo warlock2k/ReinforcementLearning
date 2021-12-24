@@ -1,6 +1,6 @@
 # ReinforcementLearning
 
-Here I document all my learnings about the topic Reinforcement Learning.
+Here I document all my learnings from the Deep Reinforcement Learning course at UVic.
 
 ## multiarmedbandit.m
 
